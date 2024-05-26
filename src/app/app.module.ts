@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    // RouteModule.forRoot(AppRoutingModule)
   ],
   providers: [
     provideClientHydration()
