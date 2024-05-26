@@ -36,15 +36,6 @@ export class EmpleadoComponent {
 
   }]
     
-  botonMenos(e:Empleado):void {
-    e.cantidad--;
-  }
-  botonMas(e:Empleado):void {
-    e.cantidad++;
-  }
-  anteUnCambio(event:any, e:Empleado ): void{
-  alert(event.code);
-    // event.preventDefault();
-  }
+ 
     
 }

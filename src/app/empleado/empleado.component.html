@@ -19,17 +19,16 @@
             <td></td>
             <td>{{e.dni}}</td>
             <td>{{e.precio | currency}}</td>
-            <td id="masBarato" >
-                @if (e.precio<100) {
-                    <h6 style="background-color:red;">Mas Barato!!</h6>
-                }
+            <td id="masBarato">
+                @if (e.precio<100) { <h6 style="background-color:red;">Mas Barato!!</h6>
+                    }
             </td>
-            <td><button class="btn btn-primary btn-sm" (click)="botonMenos(e)">-</button>
-            <input type="text" [(ngModel)]="e.cantidad"  (keyup)="anteUnCambio($event,e)" >
-            <button class="btn btn-primary btn-sm" (click)="botonMas(e)">+</button></td>
+            <td>
+                <app-input-integer [e]="e"></app-input-integer>
+            </td>
         </tr>
         }@empty{
-            <tr>No hay Nada</tr>
+        <tr>No hay Nada</tr>
         }
     </tbody>
 </table>

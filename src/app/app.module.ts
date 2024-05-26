@@ -9,6 +9,7 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { LateralComponent } from './lateral/lateral.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     EmpleadoComponent,
     LateralComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,
