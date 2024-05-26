@@ -36,6 +36,9 @@ export class EmpleadoComponent {
 
   }]
     
- 
+ maximo(m: String){
+  alert(m);
+  
+ }
     
 }

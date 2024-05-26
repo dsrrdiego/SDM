@@ -24,7 +24,9 @@
                     }
             </td>
             <td>
-                <app-input-integer [cantidad]="e.cantidad"></app-input-integer>
+                <app-input-integer [(cantidad)]="e.cantidad" (maximo)="maximo($event)"></app-input-integer>
+                <h6>{{e.cantidad}}</h6>
+
             </td>
         </tr>
         }@empty{
