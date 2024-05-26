@@ -14,7 +14,7 @@ export class EmpleadoComponent {
     "precio":31,
     "img":'assets/plomero1.webp',
   disponible: false,
-  cantidad:0,
+  cantidad:10,
 },
     {"nombre":"Pepe2",
     "dni":2922,
@@ -22,7 +22,7 @@ export class EmpleadoComponent {
     "precio":232,
     "img":'assets/plomero1.webp',
     disponible: true,
-  cantidad:0,
+  cantidad:5,
 
   },
     
@@ -32,7 +32,7 @@ export class EmpleadoComponent {
     "precio":2233,
     "img":'assets/plomero1.webp',
     disponible: false,
-  cantidad:0,
+  cantidad:3,
 
   }]
     

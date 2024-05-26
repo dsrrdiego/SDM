@@ -10,26 +10,20 @@ export class InputIntegerComponent {
   Constructor(){}
 
   @Input()
-  e: Empleado={
-    "nombre":"Pepe1",
-    "dni":2921,
-    "rubro":"Electricista",
-    "precio":31,
-    "img":'assets/plomero1.webp',
-  disponible: false,
-  cantidad:0,
-};
+  cantidad: number=0;
+  
 
   ngOnInit():void {}
 
-  botonMenos(e:Empleado):void {
-    e.cantidad--;
+  botonMenos():void {
+    this.cantidad--;
   }
-  botonMas(e:Empleado):void {
-    e.cantidad++;
+  botonMas():void {
+    this.cantidad++;
   }
-  anteUnCambio(event:any, e:Empleado ): void{
-  alert(event.code);
+  anteUnCambio(event:any): void{
+    console.log(this.cantidad);
+    
     // event.preventDefault();
   }
 }
