@@ -1,0 +1,36 @@
+<table class="table text-center">
+    <thead>
+        <tr>
+            <td></td>
+            <td>Rubro</td>
+            <td>Nombre</td>
+            <td>Dni</td>
+            <td>Precio/h</td>
+            <td></td>
+            <td></td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @for (e of empleado; track e.nombre){
+        <tr [ngClass]="{'claseado':e.disponible}">
+            <td><img class="img-thumbnail" width="100" [src]="e.img" alt=""></td>
+            <td>{{e.rubro}}</td>
+            <td></td>
+            <td>{{e.dni}}</td>
+            <td>{{e.precio | currency}}</td>
+            <td id="masBarato" >
+                @if (e.precio<100) {
+                    <h6 style="background-color:red;">Mas Barato!!</h6>
+                }
+            </td>
+            <td><button class="btn btn-primary btn-sm" (click)="botonMenos(e)">-</button>
+            <input type="text" [(ngModel)]="e.cantidad"  (keyup)="anteUnCambio($event,e)" >
+            <button class="btn btn-primary btn-sm" (click)="botonMas(e)">+</button></td>
+        </tr>
+        }@empty{
+            <tr>No hay Nada</tr>
+        }
+    </tbody>
+</table>
+<h4> * Los recuadrados son recomendados disponibles hoy</h4>
