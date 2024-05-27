@@ -26,6 +26,8 @@
             <td>
                 <app-input-integer [(cantidad)]="e.cantidad" (maximo)="maximo($event)"></app-input-integer>
                 <h6>{{e.cantidad}}</h6>
+                <button class="btn" (click)="agregar(e)">Contratar</button>
+
 
             </td>
         </tr>

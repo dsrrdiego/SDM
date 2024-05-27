@@ -1,1 +1,6 @@
-<p>lateral works!</p>
+<ul>
+    @for (e of empleados; track e.nombre){
+    <li>{{e.nombre}}</li>
+    }@empty{ <li>No hay Nada</li>}
+    <!-- </li> -->
+</ul>

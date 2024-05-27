@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleado } from './Empleado';
+import { ServicioGeneralService } from '../servicio-general.service';
 @Component({
   selector: 'app-empleado',
   templateUrl: './empleado.component.html',
@@ -38,7 +39,19 @@ export class EmpleadoComponent {
     
  maximo(m: String){
   alert(m);
+ }
+
+  // console.log('aa');
+agregar(e:Empleado){  
+  this.servicio.agregar(e);
+}
+
+// lateral:ServicioGeneralService;
+constructor (private servicio: ServicioGeneralService){
+  // console.log('aa');
+  // this.agrergar(this.empleado[0]);
   
+  // this.lateral =new ServicioGeneralService();
  }
     
 }
