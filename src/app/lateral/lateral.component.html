@@ -1,6 +1,5 @@
 <ul>
-    @for (e of empleados; track e.nombre){
+    @for (e of miListaDeEmpleados$ | async; track e.nombre){
     <li>{{e.nombre}}</li>
     }@empty{ <li>No hay Nada</li>}
-    <!-- </li> -->
 </ul>

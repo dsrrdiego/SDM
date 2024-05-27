@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Empleado } from './empleado/Empleado';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -10,15 +11,16 @@ import { Empleado } from './empleado/Empleado';
  * Logica para el Carro de Comparas
  */
 export class ServicioGeneralService {
-  empleadosAContratar:Empleado[]=[];
+  private _empleadosAContratar: Empleado[]=[];
+  empleadosAContratar:BehaviorSubject<Empleado[]>=new BehaviorSubject(this._empleadosAContratar);
 
 
   agregar(e:Empleado){
-    let item:Empleado| undefined=this.empleadosAContratar.find((value)=>value.nombre==e.nombre);
+    let item:Empleado| undefined=this._empleadosAContratar.find((value)=>value.nombre==e.nombre);
     if (!item){
-    this.empleadosAContratar.push(e);
+    this._empleadosAContratar.push(e);
+    this.empleadosAContratar.next(this._empleadosAContratar); //es el Notify del ovbserver
   }
-    console.log(this.empleadosAContratar);
     
   }
   constructor() { 
