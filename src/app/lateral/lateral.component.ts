@@ -12,6 +12,10 @@ import { Observable } from 'rxjs';
 })
 
 export class LateralComponent {
+
+  cancelar(e:Empleado){  
+    this.servicio.cancelar(e);
+  }
  
   // miListaDeEmpleados:Empleado[]=[]; Cuando se usa el observable sin el pipe
   miListaDeEmpleados$: Observable<Empleado[]>=new Observable<Empleado[]>();;

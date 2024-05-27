@@ -1,7 +1,14 @@
-<h1 class="text-center">Contratados</h1>
+<div id="contenedor">
 
-<ul>
-    @for (e of miListaDeEmpleados$ | async; track e.nombre){
-    <li>{{e.nombre}}</li>
-    }@empty{ <li>No hay Contratados aun</li>}
-</ul>
+    <h1 class="text-center">Contratados:</h1>
+    <table>
+
+
+        @for (e of miListaDeEmpleados$ | async; track e.nombre){
+        <tr>
+            <td class="w-75">{{e.nombre}}</td>
+            <td class="w-25"><button class="btn btn-primary" (click)="cancelar(e)">Cancelar</button></td>
+        </tr>
+        }
+    </table>
+</div>

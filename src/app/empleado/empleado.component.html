@@ -27,8 +27,9 @@
                 @if (e.disponible) { <h6 class="badge bg-danger">Disponible Ya!!</h6> }
             </td>
             <td>
+                @if (e.disponible) {
                 <button class="btn btn-primary" (click)="agregar(e)">Contratar</button>
-
+                }
             </td>
         </tr>
         }@empty{
