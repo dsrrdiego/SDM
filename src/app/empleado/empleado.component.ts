@@ -25,10 +25,7 @@ constructor (private servicio: ServicioGeneralService, private apiService: ApiSe
 }
 
 ngOnInit():void{
-  // this.empleado=this.apiService.empleado;
    this.apiService.getAll().subscribe(e=>this.empleado=e);
-  //  this.apiService.getAll().subscribe(e=>console.log(e));
-  //  console.log('aa');
    
  }
  

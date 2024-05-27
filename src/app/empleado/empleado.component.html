@@ -1,33 +1,33 @@
 <table class="table text-center">
     <thead>
         <tr>
-            <td></td>
-            <td>Rubro</td>
-            <td>Nombre</td>
-            <td>Dni</td>
-            <td>Precio/h</td>
-            <td></td>
-            <td></td>
+            <td class="w-20"></td>
+            <td class="w-15">Rubro</td>
+            <td class="w-25">Nombre</td>
+            <td class="w-15">Dni</td>
+            <td class="w-15">Precio/h</td>
+            <td class="w-20">Horas a acordar</td>
+            <td class="w-5"></td>
+            <td class="w-15"></td>
 
         </tr>
     </thead>
     <tbody>
         @for (e of empleado; track e.nombre){
-        <tr [ngClass]="{'claseado':e.disponible}">
+        <tr [ngClass]="{'claseado':e.precio<50}">
             <td><img class="img-thumbnail" width="100" [src]="e.img" alt=""></td>
             <td>{{e.rubro}}</td>
-            <td></td>
+            <td>{{e.nombre}}</td>
             <td>{{e.dni}}</td>
-            <td>{{e.precio | currency}}</td>
-            <td id="masBarato">
-                @if (e.precio<100) { <h6 style="background-color:red;">Mas Barato!!</h6>
-                    }
-            </td>
+            <td [ngClass]="{'claseadoPrecio':e.precio<50}">{{e.precio | currency}}</td>
             <td>
                 <app-input-integer [(cantidad)]="e.cantidad" (maximo)="maximo($event)"></app-input-integer>
-                <h6>{{e.cantidad}}</h6>
-                <button class="btn" (click)="agregar(e)">Contratar</button>
-
+            </td>
+            <td id="masBarato">
+                @if (e.disponible) { <h6 class="badge bg-danger">Disponible Ya!!</h6> }
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="agregar(e)">Contratar</button>
 
             </td>
         </tr>
@@ -36,4 +36,4 @@
         }
     </tbody>
 </table>
-<h4> * Los recuadrados son recomendados disponibles hoy</h4>
+<h4> * Los recuadrados son los considerados mas baratos por los usuarios de SDM</h4>

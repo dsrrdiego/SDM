@@ -1,5 +1,7 @@
+<h1 class="text-center">Contratados</h1>
+
 <ul>
     @for (e of miListaDeEmpleados$ | async; track e.nombre){
     <li>{{e.nombre}}</li>
-    }@empty{ <li>No hay Nada</li>}
+    }@empty{ <li>No hay Contratados aun</li>}
 </ul>
